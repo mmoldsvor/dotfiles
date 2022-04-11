@@ -1,2 +1,2 @@
-alias ls='ls --color=auto'
-alias ll='ls -l --color=auto'
+alias ls='ls -l --color=auto'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
