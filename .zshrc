@@ -18,9 +18,8 @@ EDITOR='vim'
 
 
 # Bind movement keys
-source ~/.config/.zsh_config/keybinds.zsh
-
-source ~/.config/.zsh_config/aliases.zsh
+source ~/.config/zsh_config/keybinds.zsh
+source ~/.config/zsh_config/aliases.zsh
 
 # Set ls colors
 source /usr/share/LS_COLORS/dircolors.sh
@@ -39,6 +38,7 @@ bindkey -v
 export KEYTIMEOUT=1 
 
 # vi keybinds for tab completion
+zmodload -i zsh/complist
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
