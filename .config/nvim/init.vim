@@ -16,7 +16,12 @@ filetype plugin indent on
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'morhetz/gruvbox'
+Plug 'neovim/nvim-lspconfig'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
 colorscheme gruvbox
+
+nnoremap <c-p> :Files<cr>
+
