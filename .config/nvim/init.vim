@@ -13,15 +13,31 @@ filetype plugin indent on
 :set splitright
 :set encoding=UTF-8
 
+" Remap window movement keys
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'morhetz/gruvbox'
-Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+
+if has("nvim")
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
 
 call plug#end()
 
+if has("nvim")
+    :luafile ~/.config/nvim/lua/init.lua
+endif
+
 colorscheme gruvbox
 
-nnoremap <c-p> :Files<cr>
+" Remap for fzf
+nnoremap <C-p> :Files<cr>
 
