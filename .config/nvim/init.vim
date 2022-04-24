@@ -1,17 +1,20 @@
+let mapleader="\<Space>"
 syntax on
 
-:set number 
-:set relativenumber
+set number 
+set relativenumber
 
 filetype plugin indent on
-:set autoindent
-:set tabstop=4 
-:set softtabstop=4
-:set shiftwidth=4
-:set expandtab
-:set splitbelow
-:set splitright
-:set encoding=UTF-8
+set autoindent
+set tabstop=4 
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set splitbelow
+set splitright
+set encoding=UTF-8
+set termguicolors
+set laststatus=3
 
 " Remap window movement keys
 noremap <C-h> <C-w>h
@@ -33,11 +36,20 @@ endif
 call plug#end()
 
 if has("nvim")
-    :luafile ~/.config/nvim/lua/init.lua
+    luafile ~/.config/nvim/lua/init.lua
 endif
 
 colorscheme gruvbox
 
-" Remap for fzf
-nnoremap <C-p> :Files<cr>
+" Netrw
+nnoremap <leader>e :Explore<cr>
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 
+" Remap for fzf
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>F :Rg<cr>
+
+" Options for search and replace
+nnoremap <leader>s :%s//g<left><left>
+nnoremap <leader>S :%s//gc<left><left><left>

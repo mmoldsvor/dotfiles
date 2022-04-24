@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = {"c"},
+    ensure_installed = {"c"}, 
     sync_install = false,
     ignore_install = {},
     highlight = {
