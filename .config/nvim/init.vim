@@ -16,6 +16,10 @@ set encoding=UTF-8
 set termguicolors
 set laststatus=3
 
+set ignorecase
+set smartcase
+nnoremap <silent> <leader>n :nohlsearch<CR>
+
 " Remap window movement keys
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -41,14 +45,20 @@ endif
 
 colorscheme gruvbox
 
+set autoread
+au FocusGained,BufEnter * :checktime
+
 " Netrw
 nnoremap <leader>e :Explore<cr>
+nnoremap <leader>E :Vexplore<cr>
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
 " Remap for fzf
+let $FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/.git/*}'"
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>F :Rg<cr>
+nnoremap <leader>b :Buffers<cr>
 
 " Options for search and replace
 nnoremap <leader>s :%s//g<left><left>
