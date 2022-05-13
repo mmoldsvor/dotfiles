@@ -14,3 +14,9 @@ git clone --bare git@github.com:mmoldsvor/dotfiles.git $HOME/.dotfiles
 source $HOME/.zshrc
 config config --local status.showUntrackedFiles no
 ```
+
+Inside nvim install plugins
+
+```shell
+:PlugInstall
+```
