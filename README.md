@@ -10,6 +10,6 @@ Linux configuration files
 
 ```shell
 git clone --bare git@github.com:mmoldsvor/dotfiles.git .dotfiles
-/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME checkout
+/usr/bin/git --git-dir=.dotfiles --work-tree=$HOME checkout
 config config --local status.showUntrackedFiles no
 ```
