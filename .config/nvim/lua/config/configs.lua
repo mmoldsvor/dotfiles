@@ -26,16 +26,23 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 vim.opt.ttimeoutlen = 0
 
--- Other options
 vim.opt.mouse = "a"
 vim.opt.wrap = true
 vim.opt.undofile = true
 vim.opt.list = true
 vim.opt.colorcolumn = "80"
 
-vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
-end)
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
