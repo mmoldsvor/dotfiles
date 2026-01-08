@@ -31,6 +31,7 @@ vim.opt.wrap = true
 vim.opt.undofile = true
 vim.opt.list = true
 vim.opt.colorcolumn = "80"
+vim.opt.signcolumn = "yes"
 
 vim.g.clipboard = {
   name = 'OSC 52',

@@ -58,5 +58,8 @@ return {
         duration_multiplier = 0.5
       })
     end
+  },
+  {
+    "godlygeek/tabular"
   }
 }
